@@ -1,11 +1,12 @@
 import React from 'react';
+import MainContainer from './Clock/MainContainer';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>This will be a Pomodoro Clock</h1>
+      <MainContainer />
     </div>
   );
 }

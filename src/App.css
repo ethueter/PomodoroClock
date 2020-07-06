@@ -3,6 +3,16 @@
 }
 
 body {
-  background-color: #F7FE72
+  background-color: #F7FE72;
+  display: flex;
+  justify-content: center
+}
+
+.main-container {
+  background-color: #585563;
+  color: white;
+  width: 650px;
+  
+
 }
 
