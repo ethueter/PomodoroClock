@@ -1,5 +1,6 @@
 import React from 'react';
 import Session from './Session';
+import Break from "./Break";
 
 
 const MainContainer = () => {
@@ -9,6 +10,7 @@ const MainContainer = () => {
             <h2>I am the main container</h2>
             <div>
                 <Session />
+                <Break />
             </div>
         </div>
     );
