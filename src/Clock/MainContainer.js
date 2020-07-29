@@ -1,16 +1,19 @@
 import React from 'react';
 import Session from './Session';
 import Break from "./Break";
+import Counter from "./Counter";
 
 
 const MainContainer = () => {
     
     return(
         <div className='main-container'>
-            <h2>I am the main container</h2>
             <div>
                 <Session />
                 <Break />
+            </div>
+            <div className="counter-container">
+                <Counter />
             </div>
         </div>
     );

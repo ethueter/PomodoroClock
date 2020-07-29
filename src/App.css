@@ -12,6 +12,9 @@ body {
   background-color: #585563;
   color: white;
   width: 650px;
+  display: flex;
+  justify-content: space-around;
+
   
 
 }
