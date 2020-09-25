@@ -6,13 +6,13 @@ import Counter from "./Counter";
 
 const MainContainer = () => {
     const [sessionTime, setSessionTime] = useState(35);
-    const [breackTime, setBreakTime] = useState(10);
+    const [breakTime, setBreakTime] = useState(10);
     
     return(
         <div className='main-container'>
             <div>
-                <Session />
-                <Break />
+                <Session currentSessionTime={sessionTime}/>
+                <Break currentBreakTime={breakTime}/>
             </div>
             <div className="counter-container">
                 <Counter />

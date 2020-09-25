@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-const Break = () => {
+const Break = ({currentBreakTime}) => {
     
     return(
         <div className="break">
             <h2>I am the Break Session</h2>
-            <p>0:00</p>
+            <p>currentBreakTime</p>
 
         </div>
     )
