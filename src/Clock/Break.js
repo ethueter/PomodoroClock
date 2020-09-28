@@ -6,7 +6,7 @@ const Break = ({currentBreakTime}) => {
     return(
         <div className="break">
             <h2>I am the Break Session</h2>
-            <p>currentBreakTime</p>
+            <p>{currentBreakTime}</p>
 
         </div>
     )
