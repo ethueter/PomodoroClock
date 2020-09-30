@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusCircle, faMinusCircle, faThLarge} from "@fortawesome/free-solid-svg-icons";
+import { faPlusCircle, faMinusCircle, faRedoAlt} from "@fortawesome/free-solid-svg-icons";
 
 
-const Session = ({currentSessionTime, increment}) => {
+const Session = ({currentSessionTime, increment, reset}) => {
     
     return (
       <div className="session">
@@ -20,6 +20,12 @@ const Session = ({currentSessionTime, increment}) => {
           size="2x"
           onClick={() => increment("down", "session")}
         />
+            <span> </span>
+            <FontAwesomeIcon
+                icon={faRedoAlt}
+                size="2x"
+                onClick={() => reset("session")}
+            />
       </div>
     );
 };

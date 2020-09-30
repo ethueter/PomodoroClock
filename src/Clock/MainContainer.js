@@ -23,11 +23,19 @@ const MainContainer = () => {
             }
         }
     }
+
+    const reset = (timeType) => {
+        if (timeType === "session"){
+            setSessionTime(35);
+        } else if (timeType === "break"){
+            setBreakTime(10);
+        }
+    }
     
     return (
       <div className="main-container">
         <div>
-          <Session currentSessionTime={sessionTime} increment={increment} />
+          <Session currentSessionTime={sessionTime} increment={increment} reset={reset} />
           <Break currentBreakTime={breakTime} increment={increment} />
         </div>
         <div className="counter-container">

@@ -1,8 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faPlusCircle, faMinusCircle, faRedoAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Break = ({currentBreakTime, increment}) => {
+const Break = ({currentBreakTime, increment, reset}) => {
     
     return (
       <div className="break">
@@ -19,6 +19,12 @@ const Break = ({currentBreakTime, increment}) => {
           size="2x"
           onClick={() => increment("down", "break")}
         />
+        <span> </span>
+            <FontAwesomeIcon
+                icon={faRedoAlt}
+                size="2x"
+                onClick={() => reset("break")}
+            />
       </div>
     );
 };
