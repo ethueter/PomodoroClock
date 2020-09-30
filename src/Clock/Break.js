@@ -1,12 +1,16 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 
-
-const Break = ({currentBreakTime}) => {
+const Break = ({currentBreakTime, increment}) => {
     
     return(
         <div className="break">
             <h2>I am the Break Session</h2>
             <p>{currentBreakTime}</p>
+            <FontAwesomeIcon icon={faPlusCircle} onClick={() => increment("up", "break")} />
+            <span > </span>
+            <FontAwesomeIcon icon={faMinusCircle} onClick={() => increment("down", "break")} />
 
         </div>
     )

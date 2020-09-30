@@ -24,16 +24,16 @@ const MainContainer = () => {
         }
     }
     
-    return(
-        <div className='main-container'>
-            <div>
-                <Session currentSessionTime={sessionTime} increment={increment}/>
-                <Break currentBreakTime={breakTime}/>
-            </div>
-            <div className="counter-container">
-                <Counter />
-            </div>
+    return (
+      <div className="main-container">
+        <div>
+          <Session currentSessionTime={sessionTime} increment={increment} />
+          <Break currentBreakTime={breakTime} increment={increment} />
         </div>
+        <div className="counter-container">
+          <Counter />
+        </div>
+      </div>
     );
 };
 
