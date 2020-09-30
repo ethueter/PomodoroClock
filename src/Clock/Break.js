@@ -4,16 +4,23 @@ import { faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 
 const Break = ({currentBreakTime, increment}) => {
     
-    return(
-        <div className="break">
-            <h2>I am the Break Session</h2>
-            <p>{currentBreakTime}</p>
-            <FontAwesomeIcon icon={faPlusCircle} onClick={() => increment("up", "break")} />
-            <span > </span>
-            <FontAwesomeIcon icon={faMinusCircle} onClick={() => increment("down", "break")} />
-
-        </div>
-    )
+    return (
+      <div className="break">
+        <h2>I am the Break Session</h2>
+        <p>{currentBreakTime}</p>
+        <FontAwesomeIcon
+          icon={faPlusCircle}
+          size="2x"
+          onClick={() => increment("up", "break")}
+        />
+        <span> </span>
+        <FontAwesomeIcon
+          icon={faMinusCircle}
+          size="2x"
+          onClick={() => increment("down", "break")}
+        />
+      </div>
+    );
 };
 
 export default Break;

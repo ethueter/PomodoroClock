@@ -9,9 +9,17 @@ const Session = ({currentSessionTime, increment}) => {
       <div className="session">
         <h2>I am the session setting</h2>
         <p>{currentSessionTime}min</p>
-            <FontAwesomeIcon icon={faPlusCircle} onClick={() =>increment("up", "session")}/>
-            <span> </span>
-            <FontAwesomeIcon icon={faMinusCircle} size={lg} onClick={() => increment("down", "session")}/>
+        <FontAwesomeIcon
+          icon={faPlusCircle}
+          size="2x"
+          onClick={() => increment("up", "session")}
+        />
+        <span> </span>
+        <FontAwesomeIcon
+          icon={faMinusCircle}
+          size="2x"
+          onClick={() => increment("down", "session")}
+        />
       </div>
     );
 };
