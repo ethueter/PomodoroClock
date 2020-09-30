@@ -14,8 +14,13 @@ body {
   width: 650px;
   display: flex;
   justify-content: space-around;
+  padding-bottom: 20pt
 
-  
+}
 
+.time {
+  font-family: TickingTimebombBB;
+  font-size: 32pt;
+  margin-bottom: 5pt
 }
 

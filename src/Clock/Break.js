@@ -7,7 +7,7 @@ const Break = ({currentBreakTime, increment}) => {
     return (
       <div className="break">
         <h2>I am the Break Session</h2>
-        <p>{currentBreakTime}</p>
+        <p className="time">{currentBreakTime}:00</p>
         <FontAwesomeIcon
           icon={faPlusCircle}
           size="2x"

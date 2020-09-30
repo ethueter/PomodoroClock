@@ -8,7 +8,7 @@ const Session = ({currentSessionTime, increment}) => {
     return (
       <div className="session">
         <h2>I am the session setting</h2>
-        <p>{currentSessionTime}min</p>
+        <p className="time">{currentSessionTime}:00 min</p>
         <FontAwesomeIcon
           icon={faPlusCircle}
           size="2x"
