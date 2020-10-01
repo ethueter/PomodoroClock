@@ -8,23 +8,25 @@ const Break = ({currentBreakTime, increment, reset}) => {
       <div className="break">
         <h2>I am the Break Session</h2>
         <p className="time">{currentBreakTime}:00</p>
+        <div className="controls">
         <FontAwesomeIcon
           icon={faPlusCircle}
           size="2x"
           onClick={() => increment("up", "break")}
         />
-        <span> </span>
+        
         <FontAwesomeIcon
           icon={faMinusCircle}
           size="2x"
           onClick={() => increment("down", "break")}
         />
-        <span> </span>
+        
             <FontAwesomeIcon
                 icon={faRedoAlt}
                 size="2x"
                 onClick={() => reset("break")}
             />
+            </div>
       </div>
     );
 };

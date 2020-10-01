@@ -36,7 +36,7 @@ const MainContainer = () => {
       <div className="main-container">
         <div>
           <Session currentSessionTime={sessionTime} increment={increment} reset={reset} />
-          <Break currentBreakTime={breakTime} increment={increment} />
+                <Break currentBreakTime={breakTime} increment={increment} reset={reset} />
         </div>
         <div className="counter-container">
           <Counter />
