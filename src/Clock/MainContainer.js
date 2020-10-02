@@ -8,6 +8,8 @@ const MainContainer = () => {
     const [sessionTime, setSessionTime] = useState(35);
     const [breakTime, setBreakTime] = useState(10);
     const [onBreak, setOnBreak] = useState(false);
+    const [display, setDisplay] = useState(sessionTime);
+    const [sec, setSec] = useState(0);
 
     const increment = (direction, timeType) => {
         if(timeType === "session"){
@@ -35,10 +37,18 @@ const MainContainer = () => {
 
     const flipSession = () => {
         setOnBreak(!onBreak);
+        onBreak ? setDisplay(breakTime) : setDisplay(sessionTime)
     }
 
-    const timer = (timeType) => {
-        let min = 60;
+    const timer = (num) => {
+        setSec(60);
+        setTimeout(() => setSec(sec - 1), 1000);
+        if(sec > 0){
+            setSec(sec - 1);
+        } else if ( sec === 0){
+            
+        }
+
     }
     
     return (
@@ -55,15 +65,11 @@ const MainContainer = () => {
             reset={reset}
           />
         </div>
-        {onBreak ? (
+        
           <div className="counter-container">
-            <Counter displayTime={breakTime} flip={flipSession} />
+            <Counter displayTime={display} flip={flipSession} />
           </div>
-        ) : (
-          <div className="counter-container">
-            <Counter displayTime={sessionTime} flip={flipSession} />
-          </div>
-        )}
+        
       </div>
     );
 };

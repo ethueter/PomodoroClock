@@ -7,6 +7,7 @@ const Counter = ({displayTime, flip}) => {
         <div className="counter">
             <h2>I am the counter</h2>
             <p className="time">{displayTime}</p>
+            <button onClick={flip}>Flip</button>
         </div>
     )
 };
