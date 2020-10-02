@@ -7,6 +7,7 @@ import Counter from "./Counter";
 const MainContainer = () => {
     const [sessionTime, setSessionTime] = useState(35);
     const [breakTime, setBreakTime] = useState(10);
+    const [onBreak, setOnBreak] = useState(false);
 
     const increment = (direction, timeType) => {
         if(timeType === "session"){
@@ -31,16 +32,38 @@ const MainContainer = () => {
             setBreakTime(10);
         }
     }
+
+    const flipSession = () => {
+        setOnBreak(!onBreak);
+    }
+
+    const timer = (timeType) => {
+        let min = 60;
+    }
     
     return (
       <div className="main-container">
         <div>
-          <Session currentSessionTime={sessionTime} increment={increment} reset={reset} />
-                <Break currentBreakTime={breakTime} increment={increment} reset={reset} />
+          <Session
+            currentSessionTime={sessionTime}
+            increment={increment}
+            reset={reset}
+          />
+          <Break
+            currentBreakTime={breakTime}
+            increment={increment}
+            reset={reset}
+          />
         </div>
-        <div className="counter-container">
-          <Counter />
-        </div>
+        {onBreak ? (
+          <div className="counter-container">
+            <Counter displayTime={breakTime} flip={flipSession} />
+          </div>
+        ) : (
+          <div className="counter-container">
+            <Counter displayTime={sessionTime} flip={flipSession} />
+          </div>
+        )}
       </div>
     );
 };

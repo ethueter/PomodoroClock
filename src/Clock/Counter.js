@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-const Counter = () => {
+const Counter = ({displayTime, flip}) => {
     
     return(
         <div className="counter">
             <h2>I am the counter</h2>
-            <p>0:00</p>
+            <p className="time">{displayTime}</p>
         </div>
     )
 };
