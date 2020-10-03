@@ -42,11 +42,15 @@ const MainContainer = () => {
 
     const timer = (num) => {
         setSec(60);
-        setTimeout(() => setSec(sec - 1), 1000);
+        // setTimeout(() => setSec(sec - 1), 1000);
         if(sec > 0){
             setSec(sec - 1);
         } else if ( sec === 0){
-            
+            if(num === 0) {
+                /// do something
+            } else if ( num > 0){
+                num = num -1;
+            }
         }
 
     }
