@@ -40,16 +40,17 @@ const MainContainer = () => {
         onBreak ? setDisplay(breakTime) : setDisplay(sessionTime)
     }
 
-    const timer = (num) => {
+    const timer = () => {
         setSec(60);
         // setTimeout(() => setSec(sec - 1), 1000);
         if(sec > 0){
             setSec(sec - 1);
         } else if ( sec === 0){
-            if(num === 0) {
+            if(display === 0) {
                 /// do something
-            } else if ( num > 0){
-                num = num -1;
+                flipSession();
+            } else if ( display > 0){
+                setDisplay(display - 1);
             }
         }
 
