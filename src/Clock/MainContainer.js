@@ -9,9 +9,10 @@ const MainContainer = () => {
     const [breakTime, setBreakTime] = useState(10);
     const [onBreak, setOnBreak] = useState(false);
     const [display, setDisplay] = useState(sessionTime);
-    const [sec, setSec] = useState(20);
+    const [sec, setSec] = useState(10);
     const [isRunning, setIsRunning] = useState(false);
-    let counterID;
+    const [timerID, setTimerID] = useState(0);
+    
 
     const increment = (direction, timeType) => {
         if(timeType === "session"){
@@ -42,35 +43,34 @@ const MainContainer = () => {
         onBreak ? setDisplay(breakTime) : setDisplay(sessionTime)
     }
 
-    const startStop = () => {
-        
-        if(isRunning){
-            console.log("canceling timer");
-            clearInterval(counterID);
-            setIsRunning(test => !test);
-            counterID = null;
-        } else {
-            
-            counterID = setInterval(timer, 1000);
-            setIsRunning(test => !test);
-        }
-         
-        
+    const startTimer = () => {
+        setSec(5);
+        setTimerID(setInterval(timer, 1000));
+        setIsRunning(test => !test);   
         
     }
 
+    const stopTimer = () => {
+        console.log("stop", timerID);
+        clearInterval(timerID);
+        setIsRunning(test => !test);
+    }
+
     const timer = () => {
-        if(sec > 0){
-            console.log("seconds", sec)
+        if ( sec < 0){
+            console.log("test 2")
+            // if(display == 0) {
+            //     /// flip session and restart
+            //     flipSession();
+            // } else if ( display > 0){
+            //     console.log("did this get triggeered")
+            //     setDisplay(display => display - 1);
+            //     setSec(60);
+            // }
+        } else if (sec > 0) {
             setSec(sec => sec - 1);
-        } else if ( sec === 0){
-            if(display === 0) {
-                /// flip session and restart
-                flipSession();
-            } else if ( display > 0){
-                setDisplay(display - 1);
-            }
-        }
+            console.log("test 1", sec)
+        } 
 
     }
     
@@ -94,7 +94,8 @@ const MainContainer = () => {
                 displayTime={display} 
                 displaySec={sec} 
                 running={isRunning} 
-                startStop={startStop} 
+                start={startTimer}
+                stop={stopTimer} 
                 flip={flipSession} />
           </div>
         

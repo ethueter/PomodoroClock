@@ -4,7 +4,7 @@ import { faPlayCircle, faStopCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 
-const Counter = ({displayTime, displaySec, running, startStop, flip}) => {
+const Counter = ({displayTime, displaySec, running, start, stop, flip}) => {
 
     return(
         <div className="counter">
@@ -15,12 +15,12 @@ const Counter = ({displayTime, displaySec, running, startStop, flip}) => {
                 <FontAwesomeIcon
                     icon={faStopCircle}
                     size="2x"
-                    onClick={startStop}
+                    onClick={stop}
                 /> :
                 <FontAwesomeIcon
                     icon={faPlayCircle}
                     size="2x"
-                    onClick={startStop}
+                    onClick={start}
                 />}
         </div>
     )
