@@ -1,25 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle, faStopCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 
-const Counter = ({displayTime, flip}) => {
+const Counter = ({displayTime, displaySec, running, startStop, flip}) => {
 
-    const [isRunning, setIsRunning] = useState(false);
-
-    const startStop = () => {
-        setIsRunning(!isRunning)
-    }
-
-
-    
     return(
         <div className="counter">
             <h2>I am the counter</h2>
-            <p className="time">{displayTime}</p>
+            <p className="time">{displayTime}:{displaySec}</p>
             <button onClick={flip}>Flip</button>
-            {isRunning ? 
+            {running ? 
                 <FontAwesomeIcon
                     icon={faStopCircle}
                     size="2x"

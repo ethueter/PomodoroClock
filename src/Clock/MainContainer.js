@@ -9,7 +9,9 @@ const MainContainer = () => {
     const [breakTime, setBreakTime] = useState(10);
     const [onBreak, setOnBreak] = useState(false);
     const [display, setDisplay] = useState(sessionTime);
-    const [sec, setSec] = useState(0);
+    const [sec, setSec] = useState(20);
+    const [isRunning, setIsRunning] = useState(false);
+    let counterID;
 
     const increment = (direction, timeType) => {
         if(timeType === "session"){
@@ -40,11 +42,27 @@ const MainContainer = () => {
         onBreak ? setDisplay(breakTime) : setDisplay(sessionTime)
     }
 
+    const startStop = () => {
+        
+        if(isRunning){
+            console.log("canceling timer");
+            clearInterval(counterID);
+            setIsRunning(test => !test);
+            counterID = null;
+        } else {
+            
+            counterID = setInterval(timer, 1000);
+            setIsRunning(test => !test);
+        }
+         
+        
+        
+    }
+
     const timer = () => {
-        setSec(60);
-        // setTimeout(() => setSec(sec - 1), 1000);
         if(sec > 0){
-            setSec(sec - 1);
+            console.log("seconds", sec)
+            setSec(sec => sec - 1);
         } else if ( sec === 0){
             if(display === 0) {
                 /// flip session and restart
@@ -72,7 +90,12 @@ const MainContainer = () => {
         </div>
         
           <div className="counter-container">
-            <Counter displayTime={display} flip={flipSession} />
+            <Counter 
+                displayTime={display} 
+                displaySec={sec} 
+                running={isRunning} 
+                startStop={startStop} 
+                flip={flipSession} />
           </div>
         
       </div>
