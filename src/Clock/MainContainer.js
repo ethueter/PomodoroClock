@@ -47,7 +47,7 @@ const MainContainer = () => {
             setSec(sec - 1);
         } else if ( sec === 0){
             if(display === 0) {
-                /// do something
+                /// flip session and restart
                 flipSession();
             } else if ( display > 0){
                 setDisplay(display - 1);
