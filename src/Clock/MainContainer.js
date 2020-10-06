@@ -45,7 +45,7 @@ const MainContainer = () => {
 
     const startTimer = () => {
         setSec(5);
-        setTimerID(setInterval(timer, 1000));
+        setTimerID(setInterval(timer, 1000, sec, display));
         setIsRunning(test => !test);   
         
     }
@@ -56,8 +56,8 @@ const MainContainer = () => {
         setIsRunning(test => !test);
     }
 
-    const timer = () => {
-        if ( sec < 0){
+    const timer = (seconds, minutes) => {
+        if ( seconds === 0){
             console.log("test 2")
             // if(display == 0) {
             //     /// flip session and restart
@@ -67,7 +67,7 @@ const MainContainer = () => {
             //     setDisplay(display => display - 1);
             //     setSec(60);
             // }
-        } else if (sec > 0) {
+        } else if (seconds > 0) {
             setSec(sec => sec - 1);
             console.log("test 1", sec)
         } 
