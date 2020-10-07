@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Session from './Session';
 import Break from "./Break";
 import Counter from "./Counter";
-
+import useinterval from "react-useinterval";
 
 const MainContainer = () => {
     const [sessionTime, setSessionTime] = useState(35);
@@ -45,7 +45,8 @@ const MainContainer = () => {
 
     const startTimer = () => {
         setSec(5);
-        setTimerID(setInterval(timer, 1000));
+        // setTimerID(setInterval(timer, 1000));
+        
         setIsRunning(test => !test);   
         
     }
@@ -76,6 +77,8 @@ const MainContainer = () => {
 
     }
     
+    // useinterval(timer, 1000);
+
     return (
       <div className="main-container">
         <div>
