@@ -11,7 +11,7 @@ const MainContainer = () => {
     const [display, setDisplay] = useState(sessionTime);
     const [sec, setSec] = useState(10);
     const [isRunning, setIsRunning] = useState(false);
-    const [timerID, setTimerID] = useState(0);
+    
     
 
     const increment = (direction, timeType) => {
@@ -45,39 +45,41 @@ const MainContainer = () => {
 
     const startTimer = () => {
         setSec(5);
-        // setTimerID(setInterval(timer, 1000));
         
         setIsRunning(test => !test);   
         
     }
 
     const stopTimer = () => {
-        console.log("stop", timerID);
-        clearInterval(timerID);
+        console.log("stop");
+        
         setIsRunning(test => !test);
+    }
+
+    const leadingZeros = (num) => {
+        if(num === 60 || num === 0){
+            return "00";
+        } else if (num < 10){
+            return "0"+num;
+        }
     }
 
     const timer = () => {
         console.log("minutes", display, "seconds", sec);
-        if ( sec === 0){
+        if ( sec === 0 && display === 0){
             console.log("test 2")
-            // if(display == 0) {
-            //     /// flip session and restart
-            //     flipSession();
-            // } else if ( display > 0){
-            //     console.log("did this get triggeered")
-            //     setDisplay(display => display - 1);
-            //     setSec(60);
-            // }
-        } else if (sec > 0) {
+            flipSession();
+        } else if (sec === 0 && display !== 0){
+            setDisplay(min => min-1);
+            setSec(60);
+        }  else if (sec > 0) {
             setSec(sec => sec - 1);
-            setDisplay(time => time -1);
             console.log("test 1", sec)
         } 
 
     }
     
-    // useinterval(timer, 1000);
+    useinterval(timer, isRunning ? 1000:null);
 
     return (
       <div className="main-container">
