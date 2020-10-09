@@ -8,7 +8,7 @@ const Counter = ({displayTime, displaySec, running, start, stop, zero, flip}) =>
 
     return (
       <div className="counter">
-        <h2>I am the counter</h2>
+        <h2>The Countdown</h2>
         <p className="time">
           {zero(displayTime)}:{zero(displaySec)}
         </p>

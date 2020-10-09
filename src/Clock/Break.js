@@ -6,7 +6,7 @@ const Break = ({currentBreakTime, increment, reset}) => {
     
     return (
       <div className="break">
-        <h2>I am the Break Session</h2>
+        <h2>Break Time</h2>
         <p className="time">{currentBreakTime}:00</p>
         <div className="controls">
         <FontAwesomeIcon

@@ -7,8 +7,8 @@ const Session = ({currentSessionTime, increment, reset}) => {
     
     return (
       <div className="session">
-        <h2>I am the session setting</h2>
-        <p className="time">{currentSessionTime}:00 min</p>
+        <h2>Work Session</h2>
+        <p className="time">{currentSessionTime}:00</p>
         <div className="controls">
           <FontAwesomeIcon
             icon={faPlusCircle}
