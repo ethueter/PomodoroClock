@@ -38,6 +38,13 @@ const MainContainer = () => {
         }
     }
 
+    const resetCountdown = () => {
+        setDisplay(sessionTime);
+        setSec(0);
+        setOnBreak(false);
+        setIsRunning(false);
+    }
+
     const flipSession = () => {
         setOnBreak(!onBreak);
         onBreak ? setDisplay(breakTime) : setDisplay(sessionTime)
@@ -99,7 +106,8 @@ const MainContainer = () => {
                 start={startTimer}
                 stop={stopTimer} 
                 flip={flipSession}
-                zero={leadingZeros} />
+                zero={leadingZeros}
+                reset={resetCountdown} />
           </div>
         
       </div>

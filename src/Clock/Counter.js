@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle, faStopCircle } from "@fortawesome/free-solid-svg-icons";
+import { faPlayCircle, faStopCircle, faRedoAlt } from "@fortawesome/free-solid-svg-icons";
 
 
 
-const Counter = ({displayTime, displaySec, running, start, stop, zero, flip}) => {
+const Counter = ({displayTime, displaySec, running, start, stop, zero, reset}) => {
 
     return (
       <div className="counter">
@@ -12,12 +12,16 @@ const Counter = ({displayTime, displaySec, running, start, stop, zero, flip}) =>
         <p className="time">
           {zero(displayTime)}:{zero(displaySec)}
         </p>
-        <button onClick={flip}>Flip</button>
         {running ? (
-          <FontAwesomeIcon icon={faStopCircle} size="2x" onClick={stop} />
+          <FontAwesomeIcon icon={faStopCircle} size="3x" onClick={stop} />
         ) : (
-          <FontAwesomeIcon icon={faPlayCircle} size="2x" onClick={start} />
+          <FontAwesomeIcon icon={faPlayCircle} size="3x" onClick={start} />
         )}
+            <FontAwesomeIcon
+                icon={faRedoAlt}
+                size="3x"
+                onClick={()=> reset()}
+            />
       </div>
     );
 };
