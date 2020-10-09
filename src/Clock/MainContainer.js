@@ -9,6 +9,7 @@ const MainContainer = () => {
     const [breakTime, setBreakTime] = useState(10);
     const [onBreak, setOnBreak] = useState(false);
     const [display, setDisplay] = useState(sessionTime);
+    // const [min, setMin] = useState()
     const [sec, setSec] = useState(10);
     const [isRunning, setIsRunning] = useState(false);
     
@@ -61,6 +62,8 @@ const MainContainer = () => {
             return "00";
         } else if (num < 10){
             return "0"+num;
+        } else {
+            return num;
         }
     }
 
@@ -71,7 +74,7 @@ const MainContainer = () => {
             flipSession();
         } else if (sec === 0 && display !== 0){
             setDisplay(min => min-1);
-            setSec(60);
+            setSec(59);
         }  else if (sec > 0) {
             setSec(sec => sec - 1);
             console.log("test 1", sec)
@@ -103,7 +106,8 @@ const MainContainer = () => {
                 running={isRunning} 
                 start={startTimer}
                 stop={stopTimer} 
-                flip={flipSession} />
+                flip={flipSession}
+                zero={leadingZeros} />
           </div>
         
       </div>
