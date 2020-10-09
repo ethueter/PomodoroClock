@@ -8,20 +8,29 @@ const Counter = ({displayTime, displaySec, running, start, stop, zero, reset}) =
 
     return (
       <div className="counter">
-        <h2>The Countdown</h2>
-        <p className="time">
+        <h1>The Countdown</h1>
+        <p className="timeCountdown">
           {zero(displayTime)}:{zero(displaySec)}
         </p>
-        {running ? (
-          <FontAwesomeIcon icon={faStopCircle} size="3x" onClick={stop} />
-        ) : (
-          <FontAwesomeIcon icon={faPlayCircle} size="3x" onClick={start} />
-        )}
-            <FontAwesomeIcon
-                icon={faRedoAlt}
-                size="3x"
-                onClick={()=> reset()}
-            />
+        <div className="controls">
+          {running ? (
+            <FontAwesomeIcon icon={faStopCircle} size="3x" onClick={stop} />
+          ) : (
+            <FontAwesomeIcon icon={faPlayCircle} size="3x" onClick={start} />
+          )}
+          <FontAwesomeIcon icon={faRedoAlt} size="3x" onClick={() => reset()} />
+        </div>
+        <div>
+          <p>
+            What is{" "}
+            <a
+              href="https://en.wikipedia.org/wiki/Pomodoro_Technique"
+              color="white"
+            >
+              Pomodoro?
+            </a>
+          </p>
+        </div>
       </div>
     );
 };

@@ -12,9 +12,12 @@ body {
   background-color: #585563;
   color: white;
   width: 650px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-around;
-  padding-bottom: 20pt
+  padding-bottom: 20pt;
+  border-radius: 8pt
+  
 
 }
 
@@ -22,6 +25,12 @@ body {
   font-family: TickingTimebombBB;
   font-size: 32pt;
   margin-bottom: 5pt
+}
+
+.timeCountdown{
+  font-family: TickingTimebombBB;
+  font-size: 48pt;
+  margin-bottom: 10pt
 }
 
 .controls {
