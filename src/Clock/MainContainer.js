@@ -11,7 +11,7 @@ const MainContainer = () => {
     const [display, setDisplay] = useState(sessionTime);
     const [sec, setSec] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
-    const [sound, setSound] = useState({});
+    
     
     
 
@@ -47,7 +47,9 @@ const MainContainer = () => {
     }
 
     const flipSession = () => {
-        setOnBreak(!onBreak);
+        console.log(onBreak);
+        setOnBreak(test => !test);
+        console.log(onBreak);
         onBreak ? setDisplay(breakTime) : setDisplay(sessionTime)
         soundAlarm();
     }

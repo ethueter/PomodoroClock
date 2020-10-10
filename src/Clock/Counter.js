@@ -14,9 +14,7 @@ const Counter = ({displayTime, displaySec, running, start, stop, zero, reset}) =
         </p>
         <audio className="alarm">
           <source
-            src="https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg
-"
-          ></source>
+            src="https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg"></source>
         </audio>
         <div className="controls">
           {running ? (
