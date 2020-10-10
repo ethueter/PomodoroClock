@@ -5,12 +5,13 @@ import Counter from "./Counter";
 import useinterval from "react-useinterval";
 
 const MainContainer = () => {
-    const [sessionTime, setSessionTime] = useState(35);
+    const [sessionTime, setSessionTime] = useState(1);
     const [breakTime, setBreakTime] = useState(10);
     const [onBreak, setOnBreak] = useState(false);
     const [display, setDisplay] = useState(sessionTime);
     const [sec, setSec] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
+    const [sound, setSound] = useState({});
     
     
 
@@ -48,6 +49,7 @@ const MainContainer = () => {
     const flipSession = () => {
         setOnBreak(!onBreak);
         onBreak ? setDisplay(breakTime) : setDisplay(sessionTime)
+        soundAlarm();
     }
 
     const startTimer = () => {
@@ -79,6 +81,13 @@ const MainContainer = () => {
             setSec(sec => sec - 1);
         } 
 
+    }
+
+    const soundAlarm = () => {
+        console.log("testing sound");
+        const audioEl = document.getElementsByClassName("alarm")[0];
+        console.log(audioEl);
+        audioEl.play();
     }
     
     useinterval(timer, isRunning ? 1000:null);

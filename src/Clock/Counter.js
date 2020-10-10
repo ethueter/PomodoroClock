@@ -12,6 +12,12 @@ const Counter = ({displayTime, displaySec, running, start, stop, zero, reset}) =
         <p className="timeCountdown">
           {zero(displayTime)}:{zero(displaySec)}
         </p>
+        <audio className="alarm">
+          <source
+            src="https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg
+"
+          ></source>
+        </audio>
         <div className="controls">
           {running ? (
             <FontAwesomeIcon icon={faStopCircle} size="3x" onClick={stop} />
