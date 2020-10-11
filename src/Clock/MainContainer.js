@@ -7,7 +7,7 @@ import useinterval from "react-useinterval";
 const MainContainer = () => {
     const [sessionTime, setSessionTime] = useState(1);
     const [breakTime, setBreakTime] = useState(10);
-    const [onBreak, setOnBreak] = useState(false);
+    const [onBreak, setOnBreak] = useState(true);
     const [display, setDisplay] = useState(sessionTime);
     const [sec, setSec] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
@@ -47,9 +47,7 @@ const MainContainer = () => {
     }
 
     const flipSession = () => {
-        console.log(onBreak);
-        setOnBreak(test => !test);
-        console.log(onBreak);
+        
         onBreak ? setDisplay(breakTime) : setDisplay(sessionTime)
         soundAlarm();
     }
@@ -75,6 +73,7 @@ const MainContainer = () => {
     const timer = () => {
         console.log("minutes", display, "seconds", sec);
         if ( sec === 0 && display === 0){
+            setOnBreak(test => !test);
             flipSession();
         } else if (sec === 0 && display !== 0){
             setDisplay(min => min-1);
