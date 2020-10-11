@@ -18,15 +18,23 @@ const MainContainer = () => {
     const increment = (direction, timeType) => {
         if(timeType === "session"){
             if(direction === "up"){
-                setSessionTime(sessionTime + 1);
+                if(sessionTime < 90){
+                    setSessionTime(sessionTime + 1);
+                }
             } else if (direction === "down"){
-                setSessionTime(sessionTime - 1);
+                if(sessionTime > 1){
+                    setSessionTime(sessionTime - 1);
+                }
             }
         } else if (timeType === "break"){
             if (direction === "up") {
-                setBreakTime(breakTime + 1);
+                if(breakTime < 45){
+                    setBreakTime(breakTime + 1);
+                } 
             } else if (direction === "down") {
-                setBreakTime(breakTime - 1);
+                if(breakTime > 1){
+                    setBreakTime(breakTime - 1);
+                }
             }
         }
     }
