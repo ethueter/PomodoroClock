@@ -5,7 +5,7 @@ import Counter from "./Counter";
 import useinterval from "react-useinterval";
 
 const MainContainer = () => {
-    const [sessionTime, setSessionTime] = useState(1);
+    const [sessionTime, setSessionTime] = useState(35);
     const [breakTime, setBreakTime] = useState(10);
     const [onBreak, setOnBreak] = useState(true);
     const [display, setDisplay] = useState(sessionTime);
@@ -55,7 +55,6 @@ const MainContainer = () => {
     }
 
     const flipSession = () => {
-        
         onBreak ? setDisplay(breakTime) : setDisplay(sessionTime)
         soundAlarm();
     }
