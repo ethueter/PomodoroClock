@@ -13,8 +13,8 @@ const Counter = ({displayTime, displaySec, running, start, stop, zero, reset}) =
           {zero(displayTime)}:{zero(displaySec)}
         </p>
         <audio className="alarm">
-          <source
-            src="https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg"></source>
+          <source src="https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg"></source>
+          <source src="https://actions.google.com/sounds/v1/ambiences/barnyard_with_animals.ogg"></source>
         </audio>
         <div className="controls">
           {running ? (
