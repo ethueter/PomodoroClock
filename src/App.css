@@ -36,3 +36,8 @@ body {
   justify-content: space-around
 }
 
+.description{
+  display: flex;
+  flex-wrap: wrap
+}
+

@@ -25,14 +25,9 @@ const Counter = ({displayTime, displaySec, running, start, stop, zero, reset}) =
           <FontAwesomeIcon icon={faRedoAlt} size="3x" onClick={() => reset()} />
         </div>
         <div>
-          <p>
-            What is{" "}
-            <a
-              href="https://en.wikipedia.org/wiki/Pomodoro_Technique"
-              color="white"
-            >
-              Pomodoro?
-            </a>
+          <p className="description">
+            What is Pomodoro?
+            It is a work time management strategy. Simply it is setting a set time to focus on work and then a set break.
           </p>
         </div>
       </div>
