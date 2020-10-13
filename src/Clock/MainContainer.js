@@ -93,10 +93,14 @@ const MainContainer = () => {
     }
 
     const soundAlarm = () => {
-        console.log("testing sound");
-        const audioEl = document.getElementsByClassName("alarm")[0];
-        console.log(audioEl);
-        audioEl.play();
+        if(onBreak){
+            const audioEl = document.getElementsByClassName("alarm")[1];
+            audioEl.play();
+        } else {
+            const audioEl = document.getElementsByClassName("alarm")[0];
+            audioEl.play();
+        }
+        
     }
     
     useinterval(timer, isRunning ? 1000:null);
