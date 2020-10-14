@@ -5,8 +5,8 @@ import Counter from "./Counter";
 import useinterval from "react-useinterval";
 
 const MainContainer = () => {
-    const [sessionTime, setSessionTime] = useState(35);
-    const [breakTime, setBreakTime] = useState(10);
+    const [sessionTime, setSessionTime] = useState(1);
+    const [breakTime, setBreakTime] = useState(2);
     const [onBreak, setOnBreak] = useState(true);
     const [display, setDisplay] = useState(sessionTime);
     const [sec, setSec] = useState(0);
@@ -78,7 +78,7 @@ const MainContainer = () => {
     }
 
     const timer = () => {
-        console.log("minutes", display, "seconds", sec);
+        
         if ( sec === 0 && display === 0){
             setOnBreak(test => !test);
             flipSession();
@@ -92,11 +92,14 @@ const MainContainer = () => {
     }
 
     const soundAlarm = () => {
+        let audioEl;
+
         if(onBreak){
-            const audioEl = document.getElementsByClassName("alarm")[1];
+            audioEl = document.getElementsByClassName("breakSound")[0];
+            console.log(audioEl);
             audioEl.play();
         } else {
-            const audioEl = document.getElementsByClassName("alarm")[0];
+            audioEl = document.getElementsByClassName("alarm")[0];
             audioEl.play();
         }
         

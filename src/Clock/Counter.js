@@ -14,6 +14,8 @@ const Counter = ({displayTime, displaySec, running, start, stop, zero, reset}) =
         </p>
         <audio className="alarm">
           <source src="https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg"></source>
+        </audio>
+        <audio className="breakSound">
           <source src="https://actions.google.com/sounds/v1/ambiences/barnyard_with_animals.ogg"></source>
         </audio>
         <div className="controls">
@@ -26,8 +28,8 @@ const Counter = ({displayTime, displaySec, running, start, stop, zero, reset}) =
         </div>
         <div>
           <p className="description">
-            What is Pomodoro?
-            It is a work time management strategy. Simply it is setting a set time to focus on work and then a set break.
+            What is Pomodoro? It is a work time management strategy. Simply it
+            is setting a set time to focus on work and then a set break.
           </p>
         </div>
       </div>

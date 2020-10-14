@@ -37,7 +37,7 @@ body {
 }
 
 .description{
-  display: flex;
-  flex-wrap: wrap
+  width: 200px;
+  word-wrap: break-word;
 }
 
